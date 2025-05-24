@@ -1,0 +1,668 @@
+/* --- Custom Styles for Affiliate Marketing Site --- */
+
+/* Import Pacifico font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+/* Import Chewy font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Chewy&display=swap');
+
+/* General body font */
+body {
+  font-family: Arial, sans-serif;
+  scrollbar-gutter: stable;
+}
+
+/* Footer styling */
+footer {
+  background: #222;
+  color: #fff;
+}
+
+/* Add spacing to main content containers */
+.w3-container {
+  margin-bottom: 32px;
+}
+
+/* About section images: subtle shadow and rounded corners */
+.w3-row-padding.w3-grayscale img {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 4px;
+}
+
+/* Product images: tint and zoom on hover */
+#products .w3-display-container img {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+#products .w3-display-container img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.7) saturate(1.2);
+}
+
+/* Contact buttons */
+.w3-button.w3-light-grey.w3-block {
+  background: #f1f1f1;
+  color: #333;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+}
+.w3-button.w3-light-grey.w3-block:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in effect for sections */
+.fade-section {
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.fade-section.visible {
+  opacity: 1;
+}
+
+/* --- End Custom Styles --- */
+
+.w3-display-topleft {
+  background: rgba(59, 59, 59, 0.6) !important; /* #3B3B3B with 60% opacity */
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 0; /* Optional: slightly round the bottom-right corner */
+}
+
+.w3-display-bottomleft {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: auto;
+  background: rgba(59, 59, 59, 0.6) !important;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 0 8px 0 0; /* round top-right corner */
+  font-size: 1.4em;
+  z-index: 2;
+}
+
+/* Remove hover effect from the logo link */
+.w3-bar .w3-bar-item.w3-button[href="#home"]:hover {
+  background: none !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+/* Enable hover effect for navbar links except the logo */
+.w3-bar .w3-bar-item.w3-button:not([href="#home"]):hover {
+  background: #3B3B3B !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+
+.w3-bar .w3-bar-item.w3-button {
+  transition: background 0.3s cubic-bezier(0.4,0,0.2,1) 0.02s, color 0.3s cubic-bezier(0.4,0,0.2,1) 0.02s;
+  font-family: 'Pacifico', cursive !important; /* Apply Pacifico font to navbar items */
+  font-family: 'Chewy', cursive !important;
+}
+
+/* Remove hover effect from "SnatchIt" brand link only */
+.w3-bar .w3-bar-item.w3-button[href*="#home"]:hover,
+.w3-bar .w3-bar-item.w3-button[href="../index.html#home"]:hover {
+  background: transparent !important;
+  color: inherit !important;
+  filter: none !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+/* Remove hover effect from SnatchIt brand link only on project pages */
+body .w3-bar .w3-bar-item.w3-button[href*="index.html#home"]:hover,
+body .w3-bar .w3-bar-item.w3-button[href="#home"]:hover {
+  background: transparent !important;
+  color: inherit !important;
+  filter: none !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+/* Make navbar buttons fill the navbar height and remove white gaps on hover */
+.w3-bar .w3-bar-item.w3-button {
+  height: 100%;
+  padding: 16px 24px; /* Adjust as needed for your navbar height */
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s cubic-bezier(0.4,0,0.2,1);
+  font-family: 'Chewy', cursive !important;
+}
+
+.w3-bar .w3-bar-item.w3-button:not([href="#home"]):hover,
+.w3-bar .w3-bar-item.w3-button.active {
+  background: #3B3B3B !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  border-radius: 0 !important; /* Remove rounded corners for full fill */
+}
+
+/* Remove hover effect from "SnatchIt" brand link only */
+.w3-bar .w3-bar-item.w3-button[href*="#home"]:hover,
+.w3-bar .w3-bar-item.w3-button[href="../index.html#home"]:hover {
+  background: transparent !important;
+  color: inherit !important;
+  filter: none !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+/* Remove hover effect from SnatchIt brand link only on project pages */
+body .w3-bar .w3-bar-item.w3-button[href*="index.html#home"]:hover,
+body .w3-bar .w3-bar-item.w3-button[href="#home"]:hover {
+  background: transparent !important;
+  color: inherit !important;
+  filter: none !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+/* Make all hover transitions more visible and add a slight delay */
+a, 
+button, 
+.w3-bar .w3-bar-item.w3-button, 
+.w3-button, 
+#projects .w3-display-container img {
+  transition: 
+    background 0.5s cubic-bezier(0.4,0,0.2,1) 0.02s, 
+    color 0.5s cubic-bezier(0.4,0,0.2,1) 0.02s, 
+    box-shadow 0.5s cubic-bezier(0.4,0,0.2,1) 0.02s, 
+    filter 0.5s cubic-bezier(0.4,0,0.2,1) 0.02s, 
+    transform 0.5s cubic-bezier(0.4,0,0.2,1) 0.02s;
+}
+
+/* Optionally, make the hover state a bit more pronounced for navbar and buttons */
+.w3-bar .w3-bar-item.w3-button:not([href="#home"]):hover,
+.w3-button:hover {
+  background: #3B3B3B !important;
+  color: #fff !important;
+  filter: brightness(1.2);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Responsive header text */
+@media (max-width: 600px) {
+  .w3-display-middle {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 90vw;
+    text-align: center;
+  }
+  .w3-xxlarge {
+    font-size: 2em !important;
+    word-break: break-word;
+  }
+  header img.w3-image {
+    min-height: 250px;
+    object-fit: cover;
+  }
+  .w3-bar {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0 !important;
+  }
+  .navbar-logo {
+    margin-right: auto;
+    padding-left: 2px !important; /* Move logo closer to the edge */
+  }
+  .navbar-logo-img {
+    margin-left: 0 !important;       /* Ensure no extra margin */
+    margin-right: 0 !important;
+    /* Optionally, reduce logo size for mobile */
+    height: 72px;
+    max-height: 72px;
+  }
+  .w3-bar .w3-right {
+    margin-left: auto;
+    width: auto;
+    float: none !important;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .w3-padding-32 {
+    padding: 16px !important;
+  }
+  .w3-row-padding > .w3-col {
+    margin-bottom: 16px !important;
+  }
+  /* Ensure the "It" box doesn't overflow and is centered */
+  .w3-xxlarge span.w3-black {
+    display: inline-block;
+    min-width: 2.5em;
+    text-align: center;
+    font-size: 1em;
+    margin-left: 0.3em;
+    margin-top: 0.3em;
+  }
+  .header-logo img {
+    max-width: 90vw;
+  }
+}
+
+.about-person {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.about-person.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .about-person {
+    margin-bottom: 24px;
+    /* Make sure cards stack and have enough space */
+    scroll-margin-top: 80px;
+  }
+  header.header-section {
+    min-height: 320px !important;
+    height: 320px !important;
+    position: relative;
+  }
+  .header-bg {
+    min-height: 320px !important;
+    height: 320px !important;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 120;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mobile-menu-btn span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #3B3B3B;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .mobile-menu-dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 64px;
+    right: 8px;
+    background: #3B3B3B; /* Dropdown background */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 100;
+    flex-direction: column;
+    min-width: 140px;
+  }
+  .mobile-menu-dropdown.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    pointer-events: auto;
+  }
+  .mobile-menu-dropdown a {
+    color: #fff;                /* Text color */
+    background: #3B3B3B;        /* Match dropdown background */
+    border-bottom: 1px solid #444;
+    text-align: right;
+    font-size: 1.1em;
+    padding: 14px 20px;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-menu-dropdown a:last-child {
+    border-bottom: none;
+  }
+  .mobile-menu-dropdown a:hover,
+  .mobile-menu-dropdown a:focus {
+    background: #222;           /* Slightly darker on hover */
+    color: #fff;
+  }
+  .mobile-menu-dropdown {
+    align-items: center; /* Center dropdown items horizontally */
+  }
+  .mobile-menu-dropdown a {
+    text-align: center;  /* Center text inside each link */
+    justify-content: center;
+  }
+}
+
+/* Hide hamburger and dropdown on desktop */
+@media (min-width: 601px) {
+  .mobile-menu-btn,
+  .mobile-menu-dropdown {
+    display: none !important;
+  }
+}
+
+/* Ensure body doesn't overflow horizontally */
+body {
+  overflow-x: hidden;
+}
+
+/* Project page image container styling (desktop only) */
+.project-image-container {
+  /* Remove background, padding, border-radius, box-shadow */
+  max-width: 700px;
+  margin: 48px auto 24px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image-container img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 900px) {
+  .project-image-container {
+    padding: 8px;
+    max-width: 100%;
+    margin: 24px 0 16px 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+  .project-image-container img {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Header section styling */
+.header-section {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  height: 480px;
+  overflow: hidden;
+}
+.header-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.header-tint {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35); /* adjust tint as needed */
+  z-index: 2;
+}
+.header-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+}
+
+.w3-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.w3-bar {
+  min-height: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar-logo-img {
+  height: 96px;         /* Make logo bigger */
+  max-height: none;     /* Remove max-height limit */
+  width: auto;
+  display: block;
+  margin-top: -16px;    /* Shift logo up to keep navbar compact */
+  margin-bottom: -16px; /* Shift logo down to keep navbar compact */
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #fff; /* Track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B3B3B !important; /* Thumb color */
+  border-radius: 6px;
+  border: 3px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222 !important;
+}
+
+/* For Firefox */
+html {
+  scrollbar-color: #3B3B3B #fff !important; /* thumb color, track color */
+  scrollbar-width: thin;
+}
+
+@media (max-width: 600px) {
+  .mobile-menu-btn {
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mobile-menu-btn.rotated {
+    transform: rotate(-90deg); /* Rotate counter-clockwise instead of clockwise */
+  }
+
+  .mobile-menu-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-16px) scaleY(0.95);
+    pointer-events: none;
+    transition:
+      opacity 0.3s cubic-bezier(0.4,0,0.2,1),
+      transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mobile-menu-dropdown.open {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    pointer-events: auto;
+  }
+}
+
+/* Add this near the end of your CSS */
+html {
+  scroll-padding-top: 72px; /* Adjust to your navbar height (64px + a bit of space) */
+}
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 72px; /* Adjust if your mobile navbar is a different height */
+  }
+  .mobile-menu-dropdown a {
+    font-family: 'Chewy', cursive, Arial, sans-serif !important;
+    /* Keep your other styles here */
+  }
+}
+
+/* Use Chewy font and #3B3B3B color for all main section titles */
+h1, h2, h3,
+.section-title,
+.products-title,
+.about-title,
+.contact-title {
+  font-family: 'Chewy', cursive, Arial, sans-serif !important;
+  color: #3B3B3B !important;
+}
+
+.w3-button.w3-black,
+button.w3-black,
+#contact .w3-button {
+  background: #3B3B3B !important;
+  color: #fff !important;
+  border: none;
+}
+
+.w3-button.w3-black:hover,
+button.w3-black:hover,
+#contact .w3-button:hover {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+/* Make product names smaller and hide on hover */
+#products .w3-display-bottomleft {
+  font-size: 1em;
+  padding: 6px 14px;
+  transition: opacity 0.25s;
+}
+
+#products .w3-display-container:hover .w3-display-bottomleft {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Category Table Styles */
+.categories-table {
+  display: flex;
+  gap: 32px;
+  background: transparent;
+  padding: 32px 24px;
+  border-radius: 18px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 24px 32px 24px;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: hidden; /* This prevents vertical scrollbars */
+  max-height: 100vh;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .categories-table {
+    /* Remove or comment out the next line to keep horizontal scroll on mobile */
+    /* flex-direction: column; */
+    gap: 20px;
+    padding: 16px 4px;
+  }
+  .category-card {
+    width: 80vw;      /* Show more of the card on mobile */
+    min-width: 220px; /* Keep a minimum width */
+    max-width: 320px;
+  }
+  .category-card img {
+    height: 160px;
+  }
+}
+
+/* Hide scrollbar by default, show on hover */
+body::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+body:hover::-webkit-scrollbar,
+body:active::-webkit-scrollbar,
+body:focus::-webkit-scrollbar {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #3B3B3B !important;
+  border-radius: 6px;
+  border: 3px solid #fff;
+  transition: background 0.3s;
+}
+
+body:not(:hover)::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border: 3px solid transparent;
+}
+
+hr,
+.w3-container,
+.section-title,
+.products-title,
+.about-title,
+.contact-title,
+h1, h2, h3 {
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+hr {
+  display: none !important;
+  border: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.w3-border-bottom {
+  border-bottom: none !important;
+}
+
+.category-card {
+  background: #3B3B3B;
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  min-width: 220px;
+  transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  padding: 0;
+  margin: 0;
+}
+
+.category-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  transform: scale(1.05);
+  z-index: 2;
+}
