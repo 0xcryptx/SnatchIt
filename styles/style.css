@@ -460,148 +460,27 @@ body {
   margin-bottom: -16px; /* Shift logo down to keep navbar compact */
 }
 
-/* Custom scrollbar styling */
+/* --- UNIFIED SCROLLBAR STYLE FOR ALL SCROLLBARS --- */
 ::-webkit-scrollbar {
   width: 12px;
-  background: #fff; /* Track background */
+  background: #fff;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #3B3B3B !important; /* Thumb color */
-  border-radius: 6px;
+  background: #eee !important;         /* Light grey by default */
+  border-radius: 6px !important;
   border: 3px solid #fff;
+  transition: background 0.3s;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #222 !important;
+  background: #3B3B3B !important;      /* Dark grey on hover */
 }
 
-/* For Firefox */
-html {
-  scrollbar-color: #3B3B3B #fff !important; /* thumb color, track color */
+html, body, .categories-table {
+  scrollbar-color: #bbb #fff !important; /* thumb color, track color for Firefox */
   scrollbar-width: thin;
 }
 
-@media (max-width: 600px) {
-  .mobile-menu-btn {
-    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  }
-  .mobile-menu-btn.rotated {
-    transform: rotate(-90deg); /* Rotate counter-clockwise instead of clockwise */
-  }
-
-  .mobile-menu-dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(-16px) scaleY(0.95);
-    pointer-events: none;
-    transition:
-      opacity 0.3s cubic-bezier(0.4,0,0.2,1),
-      transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  }
-  .mobile-menu-dropdown.open {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-    pointer-events: auto;
-  }
-}
-
-/* Add this near the end of your CSS */
-html {
-  scroll-padding-top: 72px; /* Adjust to your navbar height (64px + a bit of space) */
-}
-
-@media (max-width: 600px) {
-  html {
-    scroll-padding-top: 72px; /* Adjust if your mobile navbar is a different height */
-  }
-  .mobile-menu-dropdown a {
-    font-family: 'Chewy', cursive, Arial, sans-serif !important;
-    /* Keep your other styles here */
-  }
-}
-
-/* Use Chewy font and #3B3B3B color for all main section titles */
-h1, h2, h3,
-.section-title,
-.products-title,
-.about-title,
-.contact-title {
-  font-family: 'Chewy', cursive, Arial, sans-serif !important;
-  color: #3B3B3B !important;
-}
-
-.w3-button.w3-black,
-button.w3-black,
-#contact .w3-button {
-  background: #3B3B3B !important;
-  color: #fff !important;
-  border: none;
-}
-
-.w3-button.w3-black:hover,
-button.w3-black:hover,
-#contact .w3-button:hover {
-  background: #222 !important;
-  color: #fff !important;
-}
-
-/* Make product names smaller and hide on hover */
-#products .w3-display-bottomleft {
-  font-size: 1em;
-  padding: 6px 14px;
-  transition: opacity 0.25s;
-}
-
-#products .w3-display-container:hover .w3-display-bottomleft {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Category Table Styles */
-.categories-table {
-  display: flex;
-  gap: 32px;
-  background: transparent;
-  padding: 32px 24px;
-  border-radius: 18px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 0 24px 32px 24px;
-  box-shadow: none;
-  overflow-x: auto;
-  overflow-y: hidden !important; /* This prevents vertical scrollbars */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Horizontal scrollbar only for categories-table */
-.categories-table {
-    overflow-x: auto !important;   /* Enable horizontal scrolling */
-    overflow-y: hidden !important; /* Prevent vertical scrolling */
-    scrollbar-width: auto;         /* Show scrollbar in Firefox */
-}
-.categories-table::-webkit-scrollbar {
-    display: block;                /* Show scrollbar in Chrome/Safari/Opera */
-    height: 10px;
-    background: #eee;
-}
-/* Remove or override any global scrollbar thumb styles for .categories-table */
-.categories-table::-webkit-scrollbar-thumb {
-    background: #eee !important;         /* Light grey by default */
-    border-radius: 5px !important;
-}
-.categories-table::-webkit-scrollbar-thumb:hover {
-    background: #3B3B3B !important;      /* Dark grey on hover */
-}
-
-/* Remove global thumb color for body or html if present */
-body::-webkit-scrollbar-thumb,
-html::-webkit-scrollbar-thumb {
-    background: #3B3B3B !important; /* Only for main page, not for categories-table */
-}
+/* Remove all other ::-webkit-scrollbar-thumb rules below this line to avoid conflicts */
 
 /* Responsive for mobile */
 @media (max-width: 900px) {
@@ -716,4 +595,37 @@ html, body {
 
 body > * {
     min-width: 100vw;
+}
+
+/* --- CUSTOM SCROLLBAR: WHITE TRACK, DARK GREY THUMB (#3B3B3B) --- */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B3B3B !important;         /* Dark grey for all scrollbars */
+  border-radius: 6px !important;
+  border: 3px solid #fff;
+}
+
+html, body, .categories-table {
+  scrollbar-color: #3B3B3B #fff !important; /* thumb color, track color for Firefox */
+  scrollbar-width: thin;
+}
+
+.categories-table {
+  display: flex;
+  gap: 32px;
+  background: transparent;
+  padding: 32px 24px;
+  border-radius: 18px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 24px 32px 24px;
+  box-shadow: none;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
