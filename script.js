@@ -759,6 +759,13 @@ function addDynamicStyles() {
             overflow: hidden;
         }
         
+        /* On mobile, show only 1 line to reduce card height */
+        @media (max-width: 480px) {
+            .product-description {
+                -webkit-line-clamp: 1;
+            }
+        }
+        
         /* Ensure touch-active class works properly */
         .touch-active {
             -webkit-tap-highlight-color: transparent;
