@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - SnatchIt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>SnatchIt</h1>
+                <div class="logo-placeholder">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <!-- Back Button -->
+            <div class="back-button-container">
+                <button onclick="goBack()" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </button>
+            </div>
+            
+            <div class="product-detail-content">
+                <div class="product-detail-image">
+                    <div class="image-gallery">
+                        <div class="main-image-container">
+                            <img id="main-product-image" src="" alt="" />
+                            <button class="gallery-nav prev" onclick="previousImage()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav next" onclick="nextImage()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="image-indicator">
+                                <span id="current-image">1</span> / <span id="total-images">1</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail-container">
+                            <div class="thumbnails" id="thumbnails-container">
+                                <!-- Thumbnails will be generated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <div class="product-detail-category" id="product-detail-category"></div>
+                    <h1 id="product-detail-title"></h1>
+                    <div class="product-detail-content-scroll">
+                        <p id="product-detail-description"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Separate section for specs and actions below the main card -->
+            <div class="product-detail-external">
+                <div class="product-detail-specs">
+                    <div class="spec-item">
+                        <strong>Brand:</strong> <span id="product-detail-brand"></span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Category:</strong> <span id="product-detail-category-full"></span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Availability:</strong> <span id="product-detail-availability"></span>
+                    </div>
+                </div>
+                <div class="product-detail-actions">
+                    <button class="product-detail-button primary" id="product-detail-affiliate-button">
+                        View on Noon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="product-detail.js"></script>
+</body>
+</html>

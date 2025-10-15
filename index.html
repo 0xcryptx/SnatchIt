@@ -1,206 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SnatchIt</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/w3.css">
-  <link rel="stylesheet" href="styles/style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnatchIt - Your Ultimate Affiliate Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <h1>SnatchIt</h1>
+                <!-- Logo placeholder - you can replace this later -->
+                <div class="logo-placeholder">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+            </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#recommendations" class="nav-link">Recommendations</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card" style="align-items: center; display: flex;">
-    <a href="#home" class="w3-bar-item w3-button navbar-logo" style="padding:0 16px; display: flex; align-items: center;">
-      <img src="logo/SnatchIt_logo_transparent_no_slogan.png" alt="SnatchIt Logo" class="navbar-logo-img">
-    </a>
-    <div class="w3-right w3-hide-small" style="margin-left:auto;">
-      <a href="#products" class="w3-bar-item w3-button">Products</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-    <!-- Hamburger menu button (mobile only) -->
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-  <!-- Mobile dropdown menu -->
-  <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
-    <a href="#products" class="w3-bar-item w3-button">Products</a>
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-  </div>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Amazing Products</h1>
+                <p class="hero-subtitle">Your one-stop destination for the best affiliate products. Find what you need, when you need it.</p>
+                <a href="#products" class="cta-button">Explore Products</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-gem"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Header -->
-<header class="w3-display-container header-section" id="home">
-  <img class="w3-image header-bg" src="images/background.jpg" alt="background">
-  <div class="header-tint"></div>
-  <div class="w3-display-middle w3-margin-top w3-center header-logo">
-    <img src="logo/SnatchIt_logo_transparent_white.png" alt="SnatchIt Logo" style="max-width:420px; width:90%; height:auto;">
-  </div>
-</header>
+    <!-- Filter Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Browse through our curated collection of amazing products</p>
+            
+            <!-- Filter Controls -->
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Garden</option>
+                        <option value="health">Health & Beauty</option>
+                        <option value="sports">Sports & Outdoors</option>
+                        <option value="books">Books & Education</option>
+                    </select>
+                </div>
+            </div>
 
-<!-- Categories Section (moved above Products) -->
-<div class="w3-container w3-padding-32 fade-section" id="categories">
-  <h3 class="w3-padding-16">Categories</h3>
-  <div class="categories-table">
-    <div class="category-card">
-      <img src="template_images/house5.jpg" alt="Category 1" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 1</h4>
-      <p>Placeholder description 1</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house2.jpg" alt="Category 2" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 2</h4>
-      <p>Placeholder description 2</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house3.jpg" alt="Category 3" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 3</h4>
-      <p>Placeholder description 3</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house4.jpg" alt="Category 4" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 4</h4>
-      <p>Placeholder description 4</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house2.jpg" alt="Category 5" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 5</h4>
-      <p>Placeholder description 5</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house5.jpg" alt="Category 6" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 6</h4>
-      <p>Placeholder description 6</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house3.jpg" alt="Category 7" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 7</h4>
-      <p>Placeholder description 7</p>
-    </div>
-    <div class="category-card">
-      <img src="template_images/house4.jpg" alt="Category 8" style="width:100%;height:180px;object-fit:cover;">
-      <h4>Category 8</h4>
-      <p>Placeholder description 8</p>
-    </div>
-  </div>
-</div>
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
 
-<!-- Product Section -->
-<div class="w3-container w3-padding-32 fade-section" id="products">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="margin:0 0 32px 0;">Products</h3>
-  <div id="products" style="padding-top:0;">
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product1.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Summer House</div>
-            <img src="template_images/house5.jpg" alt="House" style="width:100%">
-          </a>
+    <!-- Logo Carousel Section -->
+    <section class="logo-carousel-section">
+        <div class="container">
+            <div class="logo-carousel-wrapper">
+                <div class="logo-carousel">
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/anker logo.png" alt="Anker" class="brand-logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logos/ugreen logo.png" alt="Ugreen" class="brand-logo">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product2.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Brick House</div>
-            <img src="template_images/house2.jpg" alt="House" style="width:100%">
-          </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About SnatchIt</h2>
+                    <p>We're passionate about connecting you with the best products from trusted brands. Our carefully curated selection ensures you always find quality items that meet your needs.</p>
+                    <p>As an affiliate marketing platform, we partner with top retailers to bring you exclusive deals and recommendations you can trust.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 id="product-count">1000+</h3>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 id="brand-count">50+</h3>
+                            <p>Brands</p>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-section">
+                        <h3>Available on Leading Platforms</h3>
+                        <div class="platform-logos">
+                            <div class="platform-card">
+                                <img src="logos/amazon logo.jpg" alt="Amazon" class="platform-logo">
+                            </div>
+                            <div class="platform-card">
+                                <img src="logos/noon logo.jpg" alt="Noon" class="platform-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product3.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Renovated</div>
-            <img src="template_images/house3.jpg" alt="House" style="width:100%">
-          </a>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations-section">
+        <div class="container">
+            <h2>Share Your Ideas</h2>
+            <p class="section-subtitle">Help us improve! Recommend products, suggest features, or share any ideas to make SnatchIt better.</p>
+            <div class="recommendations-content">
+                <div class="recommendation-types">
+                    <div class="recommendation-type">
+                        <i class="fas fa-box"></i>
+                        <h3>Product Recommendations</h3>
+                        <p>Know a great product we should feature? Let us know!</p>
+                    </div>
+                    <div class="recommendation-type">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Feature Suggestions</h3>
+                        <p>Have ideas for new website features or improvements?</p>
+                    </div>
+                    <div class="recommendation-type">
+                        <i class="fas fa-comments"></i>
+                        <h3>General Feedback</h3>
+                        <p>Share any thoughts or suggestions about your experience.</p>
+                    </div>
+                </div>
+                <div class="recommendation-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="recommendation-form">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="b3d750b6-4598-4308-961a-7f9b8ce52b3d">
+                        
+                        <!-- Custom email settings to improve deliverability -->
+                        <input type="hidden" name="from_name" value="SnatchIt Recommendations">
+                        <input type="hidden" name="subject" value="New Recommendation from SnatchIt Website">
+                        
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <!-- Custom redirect back to your site -->
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/index.html?success=true">
+                        
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <select name="category" class="recommendation-category" required>
+                            <option value="">Select Recommendation Type</option>
+                            <option value="product">Product Recommendation</option>
+                            <option value="feature">Website Feature</option>
+                            <option value="improvement">Site Improvement</option>
+                            <option value="other">Other Suggestion</option>
+                        </select>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Tell us about your recommendation or suggestion..." rows="6" required></textarea>
+                        <button type="submit" class="submit-button">Submit Recommendation</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product4.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Barn House</div>
-            <img src="template_images/house4.jpg" alt="House" style="width:100%">
-          </a>
+    </section>
+
+
+
+
+
+    <!-- Success Popup Modal -->
+    <div id="success-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p id="success-message">Your recommendation has been submitted successfully. We appreciate your feedback and will review your suggestion!</p>
+            <button class="popup-button" onclick="closeSuccessPopup()">Close</button>
         </div>
-      </div>
     </div>
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product5.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Summer House</div>
-            <img src="template_images/house2.jpg" alt="House" style="width:100%">
-          </a>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product6.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Brick House</div>
-            <img src="template_images/house5.jpg" alt="House" style="width:100%">
-          </a>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product7.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Renovated</div>
-            <img src="template_images/house4.jpg" alt="House" style="width:100%">
-          </a>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <a href="products/product8.html">
-            <div class="w3-display-bottomleft w3-black w3-padding">Barn House</div>
-            <img src="template_images/house3.jpg" alt="House" style="width:100%">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- About Section -->
-<div class="w3-container w3-padding-32 w3-margin-top fade-section" id="about">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-</div>
-
-<!-- About Section Images -->
-<div class="w3-row-padding w3-grayscale fade-section" id="about-team">
-  <div class="w3-col l4 m6 s12 about-person">
-    <img src="template_images/team2.jpg" alt="John" style="width:100%">
-    <h3>John Doe</h3>
-    <p class="w3-opacity">CEO & Founder</p>
-    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-  </div>
-  <div class="w3-col l4 m6 s12 about-person">
-    <img src="template_images/team1.jpg" alt="Jane" style="width:100%">
-    <h3>Jane Doe</h3>
-    <p class="w3-opacity">Architect</p>
-    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-  </div>
-  <div class="w3-col l4 m6 s12 about-person">
-    <img src="template_images/team3.jpg" alt="Mike" style="width:100%">
-    <h3>Mike Ross</h3>
-    <p class="w3-opacity">Architect</p>
-    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-  </div>
-</div>
-
-<script src="scripts/products.js"></script>
-<script src="scripts/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
