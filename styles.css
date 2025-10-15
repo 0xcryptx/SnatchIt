@@ -1382,11 +1382,16 @@ body::after {
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
-    /* Gallery Navigation - Disable touch-active to prevent stuck/massive animations */
-    .gallery-nav.touch-active {
-        /* No effects - keep button stable */
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.95);
+    /* Gallery Navigation - Completely disable all touch effects */
+    .gallery-nav.touch-active,
+    .gallery-nav:active,
+    .gallery-nav:focus {
+        transform: translateY(-50%) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        transition: none !important;
+        scale: 1 !important;
+        box-shadow: none !important;
+        opacity: 0.9 !important;
     }
     
     /* Thumbnails */
@@ -1927,20 +1932,28 @@ html {
     cursor: pointer;
     font-size: 1rem;
     color: #555;
-    transition: all 0.3s ease;
+    transition: none !important;
     z-index: 10;
     backdrop-filter: blur(10px);
-    opacity: 0.8;
+    opacity: 0.9;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     user-select: none;
+    -webkit-user-select: none;
+    will-change: auto;
 }
 
 .gallery-nav:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    opacity: 1;
+    /* Disabled hover effects to prevent mobile issues */
+}
+
+/* Lock gallery nav buttons on all states for mobile */
+.gallery-nav:active,
+.gallery-nav:focus,
+.gallery-nav:visited {
+    transform: translateY(-50%) !important;
+    transition: none !important;
+    outline: none !important;
 }
 
 .gallery-nav.prev {
