@@ -1935,26 +1935,43 @@ html {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    border: none;
+    background: rgba(255, 255, 255, 0.98);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1rem;
-    color: #555;
-    transition: none !important;
+    font-size: 1.2rem;
+    color: #333;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     opacity: 0.9;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     user-select: none;
     -webkit-user-select: none;
-    will-change: auto;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 0 !important;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.15),
+        0 2px 5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.gallery-nav i {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 /* Desktop only hover effect */
@@ -1962,6 +1979,20 @@ html {
     .gallery-nav:hover {
         background: rgba(255, 255, 255, 1);
         opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 
+            0 6px 20px rgba(0, 0, 0, 0.2),
+            0 3px 10px rgba(0, 0, 0, 0.12),
+            inset 0 1px 3px rgba(255, 255, 255, 1);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+    
+    .gallery-nav:active {
+        transform: translateY(-50%) scale(0.95);
+        box-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.15),
+            0 1px 3px rgba(0, 0, 0, 0.08),
+            inset 0 1px 2px rgba(255, 255, 255, 0.8);
     }
 }
 
@@ -1987,6 +2018,29 @@ html {
 
 .gallery-nav.next {
     right: 15px;
+}
+
+/* Subtle pulse animation for gallery navigation buttons */
+@keyframes galleryNavPulse {
+    0%, 100% {
+        box-shadow: 
+            0 4px 15px rgba(0, 0, 0, 0.15),
+            0 2px 5px rgba(0, 0, 0, 0.08),
+            inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 
+            0 6px 25px rgba(0, 0, 0, 0.25),
+            0 3px 12px rgba(0, 0, 0, 0.15),
+            inset 0 1px 3px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Apply pulse animation when hovering over the main image container */
+@media (hover: hover) and (pointer: fine) {
+    .main-image-container:hover .gallery-nav {
+        animation: galleryNavPulse 2s ease-in-out infinite;
+    }
 }
 
 .image-indicator {
@@ -2322,12 +2376,16 @@ html {
     }
     
     .gallery-nav {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 1.3rem !important;
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.4rem !important;
         opacity: 0.95 !important;
         background: rgba(255, 255, 255, 0.98) !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+        border: 2px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 
+            0 4px 15px rgba(0, 0, 0, 0.18),
+            0 2px 8px rgba(0, 0, 0, 0.12),
+            inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
         transform: translateY(-50%) !important;
         -webkit-transform: translateY(-50%) !important;
         transition: none !important;
@@ -2335,6 +2393,21 @@ html {
         animation: none !important;
         -webkit-animation: none !important;
         scale: 1 !important;
+        color: #333 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .gallery-nav i {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+        text-align: center !important;
     }
     
     /* Force stable buttons - override ALL possible animations */
