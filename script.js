@@ -458,7 +458,7 @@ function addTouchInteractions() {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     
     if (isTouchDevice) {
-        // Add touch feedback for interactive elements (excluding product cards and product buttons per user request)
+        // Add touch feedback for interactive elements (excluding product cards, product buttons, and gallery nav)
         const touchElements = document.querySelectorAll(`
             .nav-link,
             .cta-button,
@@ -471,7 +471,6 @@ function addTouchInteractions() {
             .social-links a,
             .close-modal,
             .modal-button,
-            .gallery-nav,
             .thumbnail,
             .back-button
         `.split(',').map(s => s.trim()).join(', '));
@@ -624,7 +623,7 @@ function addTouchInteractions() {
             });
         }, { passive: true });
         
-        // Add event delegation for dynamically added elements (excluding product cards and product buttons)
+        // Add event delegation for dynamically added elements (excluding product cards, product buttons, and gallery nav)
         document.addEventListener('touchstart', function(event) {
             const target = event.target.closest(`
                 .nav-link,
@@ -638,7 +637,6 @@ function addTouchInteractions() {
                 .social-links a,
                 .close-modal,
                 .modal-button,
-                .gallery-nav,
                 .thumbnail,
                 .back-button
             `.split(',').map(s => s.trim()).join(', '));
