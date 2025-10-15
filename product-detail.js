@@ -180,6 +180,26 @@ function addSwipeSupport() {
         }
     }
     
+    // Add direct touch event listeners for navigation buttons (for mobile compatibility)
+    const prevButton = document.querySelector('.gallery-nav.prev');
+    const nextButton = document.querySelector('.gallery-nav.next');
+    
+    if (prevButton) {
+        prevButton.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            previousImage();
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            nextImage();
+        });
+    }
+    
     // Add keyboard support
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
